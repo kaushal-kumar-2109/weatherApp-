@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-App</title>
+    <link rel="icon" href="./weather-icon/1d.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Patua+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/brands.min.css" integrity="sha512-mXqwRsOznG7CS37KA7CLR1Fc72gfOgp7r8xaVdBKoBKhitcKI/mK+IamtZUf+FAkufXOvVTESu9lPsoQc+kFxg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style/loader.css">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<style>
+    .errorSpan{
+        position: absolute;
+        width: 50%;
+        top:4.5rem;
+        padding:0rem 3rem;
+        display: none;
+        opacity: 0.6;
+    }
+    .error{
+        color: red;
+        background:white;
+        border-radius: 20px;
+        padding:0.2rem 1rem;
+    }
+    iframe{
+        width: 100%;
+        display: none;
+    }
+</style>
+<body>
+    
+    <div class="main-container">
+
+        <div class="current-weather">
+
+            <div class="navBar">
+                <h1 style="max-width: fit-content;min-width:100px;" class="qwitcher-grypen-bold">WA</h1>
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass" style="color: #202b3b; margin-right:1rem; font-size:1.5rem;"></i>
+                    <input id="inputField" placeholder="Search for a city" type="text" required class="input-field">
+                    <span id="inputFieldError" class="errorSpan"><p class="error">🚫 &nbsp; Fied Is Empty!</p></span>
+                    <button id="searchBtn" class="search-btn btn" style="display: none;">Search</button>
+                </div>
+            </div>
+
+            <div class="currentData">
+                <div class="data">
+                    <h1 id="UpdateCityName">Mariana</h1>
+                    <p id="UpdatePrecipitation">chance of Rain : 0%</p>
+                    <h1 style="margin-top: 2rem;" id="UpdateTemprature">31 &deg;c</h1>
+                </div>
+                <div class="img" id="UpdateWeathericon">
+                    <!-- <img src="./weather-icon/1d.svg" alt="weather icon"> -->
+                </div>
+            </div>
+
+            <div class="todayData">
+                <h2>Next 24h Forcast</h2>
+                <div class="data">
+                    <iframe src="./loader.html"></iframe>
+                </div>
+                <div class="data" id="Update24HForcastCard">
+
+                    <!-- <div class="card">
+                        <p class="text-center">12:00 Am</p>
+                        <img src="./weather-icon/01d.svg" alt="weather icon">
+                        <p class="text-center">31 &deg;c</p>
+                    </div> -->
+
+                </div>
+            </div>
+
+            <div class="todayData otherData">
+                <h2>Other Conditions</h2>
+                <div class="data" id="UpdateOtherConditions">
+                    <div class="card feel">
+                        <p>Real Feel</p>
+                        <h2>30 &deg;c</h2>
+                    </div>
+                    <div class="card wind">
+                        <p>Wind</p>
+                        <h2>12 km/h</h2>
+                    </div>
+                    <div class="card rain">
+                        <p>Chances of Rain</p>
+                        <h2>0 &percnt;</h2>
+                    </div>
+                    <div class="card uv">
+                        <p>UV Index</p>
+                        <h2>3</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="weekly-weather">
+
+            <div class="container">
+                <h2>7-Day Forcast</h2>
+                <div class="data">
+                    <iframe src="./loader.html"></iframe>
+                </div>
+                <div class="data" id="Update7DForcast">
+                    
+                    <!-- <div class="card">
+                        <p>Monday</p>
+                        <div class="weather">
+                            <img src="./weather-icon/01d.svg" />
+                            <p class="margin-l-1">Sunny</p>
+                        </div> 
+                        <p class="tag">30 &deg;c</p>
+                    </div> -->
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+<script src="./script/script.js"></script>
+</html>

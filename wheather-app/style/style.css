@@ -1,0 +1,300 @@
+/* ---------------------------------- PriDefine Values ---------------------------------- */
+:root{
+    --primary-bg-color:#0b131e;
+    --secondary-bg-color:rgb(32, 43, 59);
+    --border-color:rgb(41, 54, 74);
+    --primary-text-color:#edeeee;
+    --secondary-text-color:#afb2b9;
+}
+ /* ---------------------------------- Comman Values  ----------------------------------  */
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    transition: 0.5s;
+    box-sizing: border-box;
+    background: transparent;
+}
+h1{
+    font-size:clamp(1rem,4vw,2rem);
+    width: 100%;
+    font-weight: bold;
+    color: var(--primary-text-color);
+}
+h2{
+    font-size: clamp(0.75rem,3vw,1.5rem);
+    width: 100%;
+    font-weight: bold;
+    color: var(--primary-text-color);
+}
+h3{
+    font-size:clamp(0.5rem,2vw,1rem);
+    width: 100%;
+    text-align: start;
+    font-weight: bold;
+    color: var(--primary-text-color);
+}
+p{
+    font-size: clamp(0.6rem,3vw,1rem);
+    width: 100%;
+    color: var(--secondary-text-color);
+}
+.text-center{
+    text-align: center;
+}
+.margin-l-1{
+    margin-left: 0.5rem;
+    font-size: clamp(00.6rem,3vw,0.8rem);
+}
+.loaderTag{
+    color:lightblue;
+}
+
+.btn{
+    position: relative;
+    padding: 0rem 1rem;
+    border-radius: 20px;
+    background: transparent;
+    color: var(--primary-text-color);
+    border: 1px solid var(--secondary-bg-color);
+}
+
+.btn::after{
+    position: absolute;
+    content: "";
+    background:transparent;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    transition: 0.4s ease;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.btn:hover::after{
+    background: var(--secondary-bg-color);
+    width: 100%;
+}
+
+ /* ---------------------------------- Html Stylings  ----------------------------------  */
+body{
+    /* height: 100vh; */
+    overflow-x: hidden;
+    background: var(--primary-bg-color);
+}
+
+.main-container {
+    box-sizing: border-box;
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+/* first child */
+.main-container > :first-child {
+  flex: 0 0 69.5%; /* fixed 70% width on large screens */
+  max-width: 69.5%;
+}
+
+/* second child */
+.main-container > :last-child {
+  flex: 0 0 29.5%;
+}
+
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-bar{
+    /* background: green; */
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    box-sizing: border-box;
+    padding: 2rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.search-bar .input-field{
+    margin-right: 1rem;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--secondary-bg-color);
+    background: transparent;
+    color: var(--primary-text-color);
+}
+.search-bar .search-btn{
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: transparent;
+    color: var(--primary-text-color);
+    border: 1px solid var(--secondary-bg-color);
+    cursor: pointer;
+}
+
+.currentData{
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 2rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.currentData .data{
+    margin-right: 2rem;
+}
+.currentData .img{
+    width: 20%;
+}
+
+.todayData{
+    background:var(--secondary-bg-color);
+    border-radius: 20px;
+    width: 100%;
+    display: "flex";
+    flex-direction: "column";
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+}
+.todayData .data{
+    padding: 0 0 0.5rem 0;
+    margin-top: 1rem;
+    width: 100%;
+    display:flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.todayData .data::-webkit-scrollbar{
+    height: 0.3rem;
+    display: none;
+}
+.todayData .data:hover::-webkit-scrollbar{
+    height: 0.3rem;
+    display:flex;
+}
+.todayData .data::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+}
+.todayData .data .card{
+    padding: 0rem 0.5rem;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    width: 5rem;
+    min-width:5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-top: 0;
+    border-bottom: 0;
+}
+.todayData .data .card img{
+    margin:0.5rem 0rem;
+    width: 80%;
+}
+
+.otherData{
+    margin-top: 1rem;
+}
+.otherData .data{
+    flex-wrap: wrap;
+    justify-content:center;
+    padding: 0;
+}
+.otherData .data .card{
+    margin: 1rem;
+    border-radius: 20px;
+    min-width: 140px;
+    height: 100px;
+    border: 1px solid var(--border-color);
+}
+.otherData .data .card p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.otherData .data .card h2{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.weekly-weather{
+    padding: 3rem 0rem 0rem 0rem;
+    box-sizing: border-box;
+}
+.weekly-weather .container{
+    background: var(--secondary-bg-color);
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+}
+.weekly-weather .container .data{
+    margin-top: 2.5rem;
+    width: 100%;
+}
+.weekly-weather .container .data .card{
+    padding: 0.7rem 0rem;
+    border: 1px solid var(--border-color);
+    border-left: 0;
+    border-right: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.weekly-weather .container .data .card:first-child{
+    border-top: 0;
+}
+.weekly-weather .container .data .card:last-child{
+    border-bottom: 0;
+}
+.weekly-weather .container .data .card .weather{
+    box-sizing: border-box;
+    padding: 0rem 3rem 0rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tag{
+    text-align: right;
+}
+
+/* ------------------------------ Setting the app title --------------------------- */
+.qwitcher-grypen-bold {
+    font-size: clamp(2rem, 18vw, 3rem);
+  font-family: "Qwitcher Grypen", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ------------------------------ Setting Some meadia Query --------------------------- */
+/* stack on small screens */
+@media (width < 768px) {
+    .main-container > :first-child{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .main-container > :last-child{
+        flex:0 0 100%;
+    }
+  .main-container{
+    flex-wrap: wrap;
+  }
+}
